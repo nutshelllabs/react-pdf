@@ -1,4 +1,4 @@
-import { compose } from '@nutshelllabs/fns';
+import { compose, memoize } from '@nutshelllabs/fns';
 
 import wrapWords from './wrapWords';
 import typesetter from './typesetter';
@@ -24,25 +24,42 @@ import verticalAlignment from './verticalAlign';
  * @param  {Object}  layout options
  * @return {Array} paragraph blocks
  */
-const layoutEngine = engines => (attributedString, container, options = {}) => {
-  const processParagraph = compose(
-    resolveYOffset(engines, options),
-    resolveAttachments(engines, options),
-    generateGlyphs(engines, options),
-    verticalAlignment(options),
-    wrapWords(engines, options),
+const layoutEngine = engines =>
+  memoize(
+    (attributedString, container, options = {}) => {
+      const processParagraph = compose(
+        resolveYOffset(engines, options),
+        resolveAttachments(engines, options),
+        generateGlyphs(engines, options),
+        verticalAlignment(options),
+        wrapWords(engines, options),
+      );
+
+      const processParagraphs = paragraphs => paragraphs.map(processParagraph);
+
+      return compose(
+        finalizeFragments(engines, options),
+        typesetter(engines, options, container),
+        processParagraphs,
+        splitParagraphs(engines, options),
+        preprocessRuns(engines, options),
+        applyDefaultStyles(engines, options),
+      )(attributedString);
+    },
+    (attributedString, container) => {
+      // Turns out fonts contain circular references.  All this work is just create a super unique key that doesn't try to serialize the entire font.
+      return JSON.stringify({
+        attributedString: attributedString.string,
+        runs: attributedString.runs.map(({ attributes, ...run }) => {
+          const { font, ...attrs } = attributes;
+          return {
+            ...run,
+            attributes: { ...attrs, font: font.fullName },
+          };
+        }),
+        container,
+      });
+    },
   );
-
-  const processParagraphs = paragraphs => paragraphs.map(processParagraph);
-
-  return compose(
-    finalizeFragments(engines, options),
-    typesetter(engines, options, container),
-    processParagraphs,
-    splitParagraphs(engines, options),
-    preprocessRuns(engines, options),
-    applyDefaultStyles(engines, options),
-  )(attributedString);
-};
 
 export default layoutEngine;
