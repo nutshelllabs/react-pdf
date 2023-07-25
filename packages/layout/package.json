@@ -1,6 +1,6 @@
 {
   "name": "@nutshelllabs/layout",
-  "version": "3.8.1",
+  "version": "3.9.0",
   "license": "MIT",
   "description": "Resolve overall document component's layout",
   "author": "Nutshell Labs <pwalker@nutshelllabs.io>",
