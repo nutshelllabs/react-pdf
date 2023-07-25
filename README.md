@@ -22,6 +22,8 @@
 
 This package is a fork of [react-pdf](https://github.com/diegomura/react-pdf).  We're trying to implement some specific performance improvements for multiple renders. Some features were removed and some tests were disabled. I'd recommend you don't use this package.
 
+:chef's kiss:
+
 ### What's different between this fork and the main repo?
 
 1. The top level `<Document />` component takes a `cacheId` prop.  If this prop is present, re-rendering subsequent documents with the same `cacheId` will _not_ re-run the `resolveAssets()` step.  This means if you conditionally render components with different fonts or something like that, on subsequent renders those fonts won't get picked up and your document might look weird.
