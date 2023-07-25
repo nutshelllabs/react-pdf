@@ -1,5 +1,11 @@
 # @react-pdf/layout
 
+## 3.9.0
+
+### Minor Changes
+
+- [#27](https://github.com/nutshelllabs/react-pdf/pull/27) [`9d15549`](https://github.com/nutshelllabs/react-pdf/commit/9d15549948db799c2697e5b517a757ee1e0a2386) Thanks [@dannythai](https://github.com/dannythai)! - Add image dimensions to the resolveAssets image cache
+
 ## 3.8.1
 
 ### Patch Changes
