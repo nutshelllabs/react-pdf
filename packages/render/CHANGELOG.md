@@ -1,5 +1,11 @@
 # @react-pdf/render
 
+## 3.4.1
+
+### Patch Changes
+
+- [#32](https://github.com/nutshelllabs/react-pdf/pull/32) [`8c44c84`](https://github.com/nutshelllabs/react-pdf/commit/8c44c84f48ae9187434d115fdbdb5909ce2233b4) Thanks [@pwalker](https://github.com/pwalker)! - Revert some performance optimizations in renderGlyphs. Seems like a negligible change, and fixes the `fixed` component display issues
+
 ## 3.4.0
 
 ### Minor Changes
