@@ -1,5 +1,12 @@
 # @react-pdf/examples
 
+## 2.1.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @nutshelllabs/renderer@3.8.1
+
 ## 2.1.8
 
 ### Patch Changes

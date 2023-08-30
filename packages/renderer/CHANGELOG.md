@@ -1,5 +1,12 @@
 # @react-pdf/renderer
 
+## 3.8.1
+
+### Patch Changes
+
+- Updated dependencies [[`8c44c84`](https://github.com/nutshelllabs/react-pdf/commit/8c44c84f48ae9187434d115fdbdb5909ce2233b4)]:
+  - @nutshelllabs/render@3.4.1
+
 ## 3.8.0
 
 ### Minor Changes
