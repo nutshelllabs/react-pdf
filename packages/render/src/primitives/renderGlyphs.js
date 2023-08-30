@@ -5,13 +5,15 @@ const renderGlyphs = (ctx, glyphs, positions, x, y, options = {}) => {
 
   // Glyph encoding and positioning
   const encodedGlyphs = ctx._font.encodeGlyphs(glyphs);
-  positions.forEach((pos, i) => {
-    pos.xAdvance *= scale;
-    pos.yAdvance *= scale;
-    pos.advanceWidth = glyphs[i].advanceWidth * advanceWidthScale;
-  });
+  const encodedPositions = positions.map((pos, i) => ({
+    xAdvance: pos.xAdvance * scale,
+    yAdvance: pos.yAdvance * scale,
+    xOffset: pos.xOffset,
+    yOffset: pos.yOffset,
+    advanceWidth: glyphs[i].advanceWidth * advanceWidthScale,
+  }));
 
-  return ctx._glyphs(encodedGlyphs, positions, x, y, options);
+  return ctx._glyphs(encodedGlyphs, encodedPositions, x, y, options);
 };
 
 export default renderGlyphs;
