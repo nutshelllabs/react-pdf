@@ -1,5 +1,16 @@
 # @react-pdf/renderer
 
+## 3.9.0
+
+### Minor Changes
+
+- [#31](https://github.com/nutshelllabs/react-pdf/pull/31) [`d36420e`](https://github.com/nutshelllabs/react-pdf/commit/d36420e77acef746692653ea23a98ecc6283ea1c) Thanks [@dannythai](https://github.com/dannythai)! - Added a new onRender parameter
+
+### Patch Changes
+
+- Updated dependencies [[`d36420e`](https://github.com/nutshelllabs/react-pdf/commit/d36420e77acef746692653ea23a98ecc6283ea1c)]:
+  - @nutshelllabs/layout@3.10.0
+
 ## 3.8.1
 
 ### Patch Changes
