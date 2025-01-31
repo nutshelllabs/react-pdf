@@ -9,6 +9,30 @@ import createCache from './cache';
 
 export const IMAGE_CACHE = createCache({ limit: 30 });
 
+let GCS;
+if (!BROWSER) {
+  // eslint-disable-next-line global-require
+  GCS = require('@google-cloud/storage');
+}
+
+const createGcsStorage = emulatorHost => {
+  if (emulatorHost) {
+    return new GCS.Storage({
+      apiEndpoint: `http://${emulatorHost}`,
+      customEndpoint: true,
+    });
+  }
+
+  return new GCS.Storage();
+};
+
+let storage;
+export const configureStorage = (
+  emulatorHost = process.env.GCS_EMULATOR_HOST,
+) => {
+  storage = createGcsStorage(emulatorHost);
+};
+
 const getAbsoluteLocalPath = src => {
   if (BROWSER) {
     throw new Error('Cannot check local paths in client-side environment');
@@ -143,13 +167,30 @@ const getImageFormat = body => {
   return extension;
 };
 
+const resolveImageFromGcs = async uri => {
+  if (BROWSER) {
+    throw new Error('Cannot download from GCS in client-side environment');
+  }
+
+  if (!storage) {
+    configureStorage();
+  }
+
+  const response = await GCS.File.from(uri, storage).download();
+  return response[0];
+};
+
 const resolveImageFromUrl = async src => {
   const { uri, body, headers, method = 'GET' } = src;
 
-  const data =
-    !BROWSER && getAbsoluteLocalPath(uri)
-      ? await fetchLocalFile(uri)
+  let data;
+  if (!BROWSER && getAbsoluteLocalPath(uri)) {
+    data = await fetchLocalFile(uri);
+  } else {
+    data = uri.startsWith('gs://')
+      ? await resolveImageFromGcs(uri)
       : await fetchRemoteFile(uri, { body, headers, method });
+  }
 
   const extension = getImageFormat(data);
 

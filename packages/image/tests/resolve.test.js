@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import resolveImage, { IMAGE_CACHE } from '../src/resolve';
+import resolveImage, { IMAGE_CACHE, configureStorage } from '../src/resolve';
 
 const jpgImageUrl = 'https://react-pdf.org/static/images/quijote1.jpg';
 const pngImageUrl = 'https://react-pdf.org/static/images/quijote2.png';
@@ -64,6 +64,18 @@ describe('image resolveImage', () => {
     fetch.once(localPNGImage);
 
     const image = await resolveImage({ uri: pngImageUrl });
+
+    expect(image.data).toBeTruthy();
+    expect(image.width).toBeGreaterThan(0);
+    expect(image.height).toBeGreaterThan(0);
+  });
+
+  test.skip('[Manual] Should render a png image from GCS', async () => {
+    configureStorage('localhost:4443');
+
+    const gcsImageUrl =
+      'gs://irisflow_input/1/1/brokerage_statement/e3eec7c7-96ff-4825-9485-06decad51544/test.jpg';
+    const image = await resolveImage({ uri: gcsImageUrl });
 
     expect(image.data).toBeTruthy();
     expect(image.width).toBeGreaterThan(0);
