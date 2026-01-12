@@ -1,4 +1,4 @@
-import * as P from '@react-pdf/primitives';
+import * as P from '@nutshelllabs/primitives';
 
 export type TextInstanceNode = {
   type: typeof P.TextInstance;

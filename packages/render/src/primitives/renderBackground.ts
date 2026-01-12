@@ -1,9 +1,9 @@
-import { isNil } from '@react-pdf/fns';
+import { isNil } from '@nutshelllabs/fns';
 
 import clipNode from '../operations/clipNode';
 import parseColor from '../utils/parseColor';
 import { Context } from '../types';
-import { SafeNode } from '@react-pdf/layout';
+import { SafeNode } from '@nutshelllabs/layout';
 
 const drawBackground = (ctx: Context, node: SafeNode) => {
   if (!node.box) return;

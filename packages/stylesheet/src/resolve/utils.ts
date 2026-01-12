@@ -1,4 +1,4 @@
-import { parseFloat } from '@react-pdf/fns';
+import { parseFloat } from '@nutshelllabs/fns';
 
 import transformUnit from '../utils/units';
 import transformColor from '../utils/colors';

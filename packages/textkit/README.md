@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/5600341/27505816-c8bc37aa-587f-11e7-9a86-08a2d081a8b9.png" height="280px">
 </p>
 
-# @react-pdf/textkit
+# @nutshelllabs/textkit
 
 > An advanced text layout framework
 
@@ -15,7 +15,7 @@ This project is a fork of [textkit](https://github.com/foliojs/textkit) by @devo
 ## Installation
 
 ```bash
-yarn add @react-pdf/textkit
+yarn add @nutshelllabs/textkit
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ import layoutEngine, {
   wordHyphenation,
   fontSubstitution,
   fromFragments,
-} from '@react-pdf/textkit';
+} from '@nutshelllabs/textkit';
 
 // Create engines configuration
 const engines = {
@@ -89,7 +89,7 @@ The layout engine uses several specialized engines that can be customized:
 Handles bidirectional text analysis using the Unicode Bidirectional Algorithm. Determines text direction for mixed LTR/RTL content.
 
 ```js
-import { bidi } from '@react-pdf/textkit';
+import { bidi } from '@nutshelllabs/textkit';
 
 const bidiEngine = bidi();
 const result = bidiEngine(attributedString);
@@ -100,7 +100,7 @@ const result = bidiEngine(attributedString);
 Performs line breaking using the Knuth-Plass algorithm with fallback to best-fit. Handles hyphenation points and produces optimal line breaks.
 
 ```js
-import { linebreaker } from '@react-pdf/textkit';
+import { linebreaker } from '@nutshelllabs/textkit';
 
 const linebreakerEngine = linebreaker({
   tolerance: 4,
@@ -113,7 +113,7 @@ const linebreakerEngine = linebreaker({
 Adjusts character and word spacing to achieve justified text alignment. Based on Apple's justification algorithm.
 
 ```js
-import { justification } from '@react-pdf/textkit';
+import { justification } from '@nutshelllabs/textkit';
 
 const justificationEngine = justification({
   expandCharFactor: { before: 0, after: 0 },
@@ -128,7 +128,7 @@ const justificationEngine = justification({
 Automatically substitutes fonts when the primary font doesn't have glyphs for certain characters. Picks the best font from the font stack.
 
 ```js
-import { fontSubstitution } from '@react-pdf/textkit';
+import { fontSubstitution } from '@nutshelllabs/textkit';
 
 const fontSubstitutionEngine = fontSubstitution();
 ```
@@ -138,7 +138,7 @@ const fontSubstitutionEngine = fontSubstitution();
 Identifies Unicode script runs in text (Latin, Arabic, Han, etc.) to enable proper font selection and shaping.
 
 ```js
-import { scriptItemizer } from '@react-pdf/textkit';
+import { scriptItemizer } from '@nutshelllabs/textkit';
 
 const scriptItemizerEngine = scriptItemizer();
 ```
@@ -148,7 +148,7 @@ const scriptItemizerEngine = scriptItemizer();
 Provides word hyphenation using language-specific patterns. Supports soft hyphens and custom hyphenation callbacks.
 
 ```js
-import { wordHyphenation } from '@react-pdf/textkit';
+import { wordHyphenation } from '@nutshelllabs/textkit';
 
 const wordHyphenationEngine = wordHyphenation();
 const syllables = wordHyphenationEngine('hyphenation'); // ['hy', 'phen', 'a', 'tion']
@@ -159,7 +159,7 @@ const syllables = wordHyphenationEngine('hyphenation'); // ['hy', 'phen', 'a', '
 Generates decoration lines (underline, strikethrough) for styled text runs.
 
 ```js
-import { textDecoration } from '@react-pdf/textkit';
+import { textDecoration } from '@nutshelllabs/textkit';
 
 const textDecorationEngine = textDecoration();
 ```
@@ -180,7 +180,7 @@ const paragraphs = layout(attributedString, container, options);
 Creates an AttributedString from text fragments.
 
 ```js
-import { fromFragments } from '@react-pdf/textkit';
+import { fromFragments } from '@nutshelllabs/textkit';
 
 const attributedString = fromFragments([
   { string: 'Hello ', attributes: { fontSize: 14 } },

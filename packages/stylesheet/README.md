@@ -2,20 +2,20 @@
   <img src="https://user-images.githubusercontent.com/5600341/27505816-c8bc37aa-587f-11e7-9a86-08a2d081a8b9.png" height="280px">
 </p>
 
-# @react-pdf/stylesheet
+# @nutshelllabs/stylesheet
 
 Styles resolution engine for react-pdf. Transforms CSS-like style objects into normalized, resolved values ready for layout and rendering. Handles unit conversions, color parsing, shorthand expansion, media queries, and style flattening.
 
 ## Installation
 
 ```bash
-yarn add @react-pdf/stylesheet
+yarn add @nutshelllabs/stylesheet
 ```
 
 ## Usage
 
 ```js
-import stylesheet from '@react-pdf/stylesheet';
+import stylesheet from '@nutshelllabs/stylesheet';
 
 const container = {
   width: 400,
@@ -64,7 +64,7 @@ const computed = stylesheet(container, style);
 Merges arrays of style objects into a single object. Supports nested arrays and filters out null/undefined values.
 
 ```js
-import stylesheet, { flatten } from '@react-pdf/stylesheet';
+import stylesheet, { flatten } from '@nutshelllabs/stylesheet';
 
 const baseStyle = { margin: 10, padding: 5 };
 const activeStyle = { backgroundColor: 'blue' };
@@ -134,7 +134,7 @@ const style = {
 Normalizes color values to hexadecimal format.
 
 ```js
-import { transformColor } from '@react-pdf/stylesheet';
+import { transformColor } from '@nutshelllabs/stylesheet';
 
 transformColor('rgb(255, 0, 0)'); // => '#FF0000'
 transformColor('rgba(0, 0, 255, 0.5)'); // => '#0000FF80'
@@ -325,7 +325,7 @@ Resolves styles for a given container.
 Flattens an array of style objects into a single merged object.
 
 ```js
-import { flatten } from '@react-pdf/stylesheet';
+import { flatten } from '@nutshelllabs/stylesheet';
 
 flatten([{ margin: 10 }, null, { padding: 5 }]);
 // => { margin: 10, padding: 5 }
@@ -336,7 +336,7 @@ flatten([{ margin: 10 }, null, { padding: 5 }]);
 Transforms RGB/HSL color strings to hexadecimal format.
 
 ```js
-import { transformColor } from '@react-pdf/stylesheet';
+import { transformColor } from '@nutshelllabs/stylesheet';
 
 transformColor('rgb(255, 128, 0)'); // => '#FF8000'
 ```

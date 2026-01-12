@@ -1,8 +1,8 @@
-import FontStore from '@react-pdf/font';
-import renderPDF from '@react-pdf/render';
-import PDFDocument from '@react-pdf/pdfkit';
-import layoutDocument from '@react-pdf/layout';
-import { upperFirst } from '@react-pdf/fns';
+import FontStore from '@nutshelllabs/font';
+import renderPDF from '@nutshelllabs/render';
+import PDFDocument from '@nutshelllabs/pdfkit';
+import layoutDocument from '@nutshelllabs/layout';
+import { upperFirst } from '@nutshelllabs/fns';
 
 import { omitNils } from './utils';
 import createRenderer from './renderer';

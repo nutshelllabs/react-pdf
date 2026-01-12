@@ -1,4 +1,4 @@
-# @react-pdf/png-js
+# @nutshelllabs/png-js
 
 ## 3.0.0
 

@@ -1,8 +1,8 @@
-import * as P from '@react-pdf/primitives';
-import { SafeStyle, Style } from '@react-pdf/stylesheet';
-import { HyphenationCallback } from '@react-pdf/font';
+import * as P from '@nutshelllabs/primitives';
+import { SafeStyle, Style } from '@nutshelllabs/stylesheet';
+import { HyphenationCallback } from '@nutshelllabs/font';
 import { YogaNode } from 'yoga-layout/load';
-import { Paragraph } from '@react-pdf/textkit';
+import { Paragraph } from '@nutshelllabs/textkit';
 
 import { Box, NodeProps, Origin, RenderProp } from './base';
 import { SafeTextInstanceNode, TextInstanceNode } from './text-instance';

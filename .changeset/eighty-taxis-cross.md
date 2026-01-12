@@ -1,5 +1,5 @@
 ---
-"@react-pdf/fns": patch
+"@nutshelllabs/fns": patch
 ---
 
 feat(fns): various improvements

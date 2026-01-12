@@ -1,6 +1,6 @@
-import * as P from '@react-pdf/primitives';
-import { pick, compose } from '@react-pdf/fns';
-import { SafeStyle } from '@react-pdf/stylesheet';
+import * as P from '@nutshelllabs/primitives';
+import { pick, compose } from '@nutshelllabs/fns';
+import { SafeStyle } from '@nutshelllabs/stylesheet';
 
 import { SafeNode } from '../types';
 

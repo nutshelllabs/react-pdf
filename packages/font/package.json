@@ -1,5 +1,5 @@
 {
-  "name": "@react-pdf/font",
+  "name": "@nutshelllabs/font",
   "version": "4.0.4",
   "license": "MIT",
   "description": "Register font and emoji source for react-pdf document",
@@ -23,8 +23,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-pdf/pdfkit": "^4.1.0",
-    "@react-pdf/types": "^2.9.2",
+    "@nutshelllabs/pdfkit": "^4.1.0",
+    "@nutshelllabs/types": "^2.9.2",
     "fontkit": "^2.0.2",
     "is-url": "^1.2.4"
   },

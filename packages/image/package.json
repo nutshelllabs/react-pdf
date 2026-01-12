@@ -1,5 +1,5 @@
 {
-  "name": "@react-pdf/image",
+  "name": "@nutshelllabs/image",
   "version": "3.0.4",
   "license": "MIT",
   "description": "Parses the images in png or jpeg format for react-pdf document",
@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-pdf/png-js": "^3.0.0",
+    "@nutshelllabs/png-js": "^3.0.0",
     "jay-peg": "^1.1.1"
   },
   "files": [

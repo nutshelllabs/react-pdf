@@ -1,5 +1,5 @@
 ---
-"@react-pdf/textkit": patch
+"@nutshelllabs/textkit": patch
 ---
 
 fix: cannot read units for Em

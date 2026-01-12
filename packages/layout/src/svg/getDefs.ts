@@ -1,4 +1,4 @@
-import * as P from '@react-pdf/primitives';
+import * as P from '@nutshelllabs/primitives';
 
 import { SafeDefs, SafeDefsNode, SafeNode, SafeSvgNode } from '../types';
 

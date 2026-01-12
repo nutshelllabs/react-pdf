@@ -1,4 +1,4 @@
-import * as P from '@react-pdf/primitives';
+import * as P from '@nutshelllabs/primitives';
 
 export enum Primitive {
   G = P.G,

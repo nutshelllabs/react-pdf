@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/5600341/27505816-c8bc37aa-587f-11e7-9a86-08a2d081a8b9.png" height="280px">
 </p>
 
-# @react-pdf/fns
+# @nutshelllabs/fns
 
 > Lightweight utility functions for react-pdf
 
@@ -11,7 +11,7 @@ A collection of functional programming utilities used internally by react-pdf. Z
 ## Installation
 
 ```bash
-yarn add @react-pdf/fns
+yarn add @nutshelllabs/fns
 ```
 
 ## Table of Contents
@@ -43,7 +43,7 @@ yarn add @react-pdf/fns
 Applies a function to the value at the given index of an array.
 
 ```js
-import { adjust } from '@react-pdf/fns';
+import { adjust } from '@nutshelllabs/fns';
 
 adjust(1, (x) => x * 2, [1, 2, 3]); // => [1, 4, 3]
 adjust(-1, (x) => x + 10, [1, 2, 3]); // => [1, 2, 13]
@@ -56,7 +56,7 @@ adjust(-1, (x) => x + 10, [1, 2, 3]); // => [1, 2, 13]
 Performs right-to-left function composition with async functions support. `asyncCompose(f, g, h)(x)` is equivalent to `await f(await g(await h(x)))`.
 
 ```js
-import { asyncCompose } from '@react-pdf/fns';
+import { asyncCompose } from '@nutshelllabs/fns';
 
 const addAsync = async (x) => x + 1;
 const double = (x) => x * 2;
@@ -72,7 +72,7 @@ await fn(5); // => 12
 Capitalizes the first letter of each word in a string.
 
 ```js
-import { capitalize } from '@react-pdf/fns';
+import { capitalize } from '@nutshelllabs/fns';
 
 capitalize('hello world'); // => 'Hello World'
 capitalize('foo bar baz'); // => 'Foo Bar Baz'
@@ -85,7 +85,7 @@ capitalize('foo bar baz'); // => 'Foo Bar Baz'
 Wraps a value in an array if it isn't one already.
 
 ```js
-import { castArray } from '@react-pdf/fns';
+import { castArray } from '@nutshelllabs/fns';
 
 castArray('foo'); // => ['foo']
 castArray(['foo']); // => ['foo']
@@ -99,7 +99,7 @@ castArray(123); // => [123]
 Performs right-to-left function composition. `compose(f, g, h)(x)` is equivalent to `f(g(h(x)))`.
 
 ```js
-import { compose } from '@react-pdf/fns';
+import { compose } from '@nutshelllabs/fns';
 
 const add1 = (x) => x + 1;
 const double = (x) => x * 2;
@@ -115,7 +115,7 @@ fn(5); // => 12
 Drops the last element from an array or string.
 
 ```js
-import { dropLast } from '@react-pdf/fns';
+import { dropLast } from '@nutshelllabs/fns';
 
 dropLast([1, 2, 3]); // => [1, 2]
 dropLast('hello'); // => 'hell'
@@ -128,7 +128,7 @@ dropLast('hello'); // => 'hell'
 Applies transformations to an object's values based on a transformation map.
 
 ```js
-import { evolve } from '@react-pdf/fns';
+import { evolve } from '@nutshelllabs/fns';
 
 evolve(
   { count: (n) => n + 1, name: (s) => s.toUpperCase() },
@@ -144,7 +144,7 @@ evolve(
 Retrieves a value at a given path from an object with a default fallback.
 
 ```js
-import { get } from '@react-pdf/fns';
+import { get } from '@nutshelllabs/fns';
 
 get({ a: { b: 1 } }, ['a', 'b'], 0); // => 1
 get({ a: { b: 1 } }, ['a', 'c'], 0); // => 0
@@ -158,7 +158,7 @@ get({ a: { b: 1 } }, 'a', {}); // => { b: 1 }
 Checks if a value is `null` or `undefined`.
 
 ```js
-import { isNil } from '@react-pdf/fns';
+import { isNil } from '@nutshelllabs/fns';
 
 isNil(null); // => true
 isNil(undefined); // => true
@@ -173,7 +173,7 @@ isNil(''); // => false
 Returns the last element of an array or last character of a string.
 
 ```js
-import { last } from '@react-pdf/fns';
+import { last } from '@nutshelllabs/fns';
 
 last([1, 2, 3]); // => 3
 last('abc'); // => 'c'
@@ -187,7 +187,7 @@ last([]); // => undefined
 Maps over the values of an object, applying a function to each value.
 
 ```js
-import { mapValues } from '@react-pdf/fns';
+import { mapValues } from '@nutshelllabs/fns';
 
 mapValues({ a: 1, b: 2 }, (v) => v * 2); // => { a: 2, b: 4 }
 mapValues({ x: 'foo', y: 'bar' }, (v, k) => `${k}:${v}`);
@@ -201,7 +201,7 @@ mapValues({ x: 'foo', y: 'bar' }, (v, k) => `${k}:${v}`);
 Parses a percentage string and returns both the numeric value and decimal percent.
 
 ```js
-import { matchPercent } from '@react-pdf/fns';
+import { matchPercent } from '@nutshelllabs/fns';
 
 matchPercent('50%'); // => { value: 50, percent: 0.5 }
 matchPercent('-25%'); // => { value: -25, percent: -0.25 }
@@ -215,7 +215,7 @@ matchPercent('abc'); // => null
 Creates a new object excluding specified keys.
 
 ```js
-import { omit } from '@react-pdf/fns';
+import { omit } from '@nutshelllabs/fns';
 
 omit('b', { a: 1, b: 2, c: 3 }); // => { a: 1, c: 3 }
 omit(['a', 'c'], { a: 1, b: 2, c: 3 }); // => { b: 2 }
@@ -228,7 +228,7 @@ omit(['a', 'c'], { a: 1, b: 2, c: 3 }); // => { b: 2 }
 Parses a string to a float. Non-string values pass through unchanged.
 
 ```js
-import { parseFloat } from '@react-pdf/fns';
+import { parseFloat } from '@nutshelllabs/fns';
 
 parseFloat('3.14'); // => 3.14
 parseFloat('10px'); // => 10
@@ -243,7 +243,7 @@ parseFloat(null); // => null
 Creates a new object with only the specified keys.
 
 ```js
-import { pick } from '@react-pdf/fns';
+import { pick } from '@nutshelllabs/fns';
 
 pick(['a', 'c'], { a: 1, b: 2, c: 3 }); // => { a: 1, c: 3 }
 pick(['x'], { a: 1, b: 2 }); // => {}
@@ -256,7 +256,7 @@ pick(['x'], { a: 1, b: 2 }); // => {}
 Creates an array with an element repeated a specified number of times.
 
 ```js
-import { repeat } from '@react-pdf/fns';
+import { repeat } from '@nutshelllabs/fns';
 
 repeat('a', 3); // => ['a', 'a', 'a']
 repeat(0, 4); // => [0, 0, 0, 0]
@@ -269,7 +269,7 @@ repeat(0, 4); // => [0, 0, 0, 0]
 Returns a new array with elements in reverse order (does not mutate original).
 
 ```js
-import { reverse } from '@react-pdf/fns';
+import { reverse } from '@nutshelllabs/fns';
 
 reverse([1, 2, 3]); // => [3, 2, 1]
 reverse(['a', 'b', 'c']); // => ['c', 'b', 'a']
@@ -282,7 +282,7 @@ reverse(['a', 'b', 'c']); // => ['c', 'b', 'a']
 Converts the first character of a string to uppercase.
 
 ```js
-import { upperFirst } from '@react-pdf/fns';
+import { upperFirst } from '@nutshelllabs/fns';
 
 upperFirst('hello'); // => 'Hello'
 upperFirst('hELLO'); // => 'HELLO'
@@ -295,7 +295,7 @@ upperFirst('hELLO'); // => 'HELLO'
 Returns a new array excluding the specified values.
 
 ```js
-import { without } from '@react-pdf/fns';
+import { without } from '@nutshelllabs/fns';
 
 without([2, 4], [1, 2, 3, 4, 5]); // => [1, 3, 5]
 without(['b'], ['a', 'b', 'c']); // => ['a', 'c']

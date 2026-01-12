@@ -1,10 +1,10 @@
 import { describe, expect, test } from 'vitest';
 
-import * as P from '@react-pdf/primitives';
+import * as P from '@nutshelllabs/primitives';
 
 import createCTX from '../ctx';
 import renderCircle from '../../src/primitives/renderCircle';
-import { SafeCircleNode } from '@react-pdf/layout';
+import { SafeCircleNode } from '@nutshelllabs/layout';
 
 const round = (num: number) => Math.round(num * 100) / 100;
 

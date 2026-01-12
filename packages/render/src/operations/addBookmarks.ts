@@ -1,4 +1,4 @@
-import { SafeDocumentNode, SafeNode } from '@react-pdf/layout';
+import { SafeDocumentNode, SafeNode } from '@nutshelllabs/layout';
 
 import { Context } from '../types';
 

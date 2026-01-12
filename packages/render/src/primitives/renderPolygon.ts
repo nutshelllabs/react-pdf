@@ -1,4 +1,4 @@
-import { SafePolygonNode } from '@react-pdf/layout';
+import { SafePolygonNode } from '@nutshelllabs/layout';
 
 import { Context } from '../types';
 import parsePoints from '../svg/parsePoints';

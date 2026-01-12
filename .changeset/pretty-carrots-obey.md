@@ -1,5 +1,5 @@
 ---
-"@react-pdf/font": patch
+"@nutshelllabs/font": patch
 ---
 
 feat(font): various improvements

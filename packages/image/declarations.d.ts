@@ -3,7 +3,7 @@ declare module 'jay-peg' {
   export default { decode };
 }
 
-declare module '@react-pdf/png-js' {
+declare module '@nutshelllabs/png-js' {
   class PNG {
     constructor(data: Buffer);
     width: number;

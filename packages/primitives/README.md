@@ -2,20 +2,20 @@
   <img src="https://user-images.githubusercontent.com/5600341/27505816-c8bc37aa-587f-11e7-9a86-08a2d081a8b9.png" height="280px">
 </p>
 
-# @react-pdf/primitives
+# @nutshelllabs/primitives
 
 Internal element type constants for react-pdf. This package defines the primitive node types used throughout the react-pdf rendering pipeline.
 
 ## Installation
 
 ```bash
-yarn add @react-pdf/primitives
+yarn add @nutshelllabs/primitives
 ```
 
 ## Usage
 
 ```js
-import { View, Text, Page, Document } from '@react-pdf/primitives';
+import { View, Text, Page, Document } from '@nutshelllabs/primitives';
 
 console.log(View); // 'VIEW'
 console.log(Text); // 'TEXT'

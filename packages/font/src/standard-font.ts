@@ -1,5 +1,5 @@
 // @ts-expect-error ts being silly
-import { PDFFont } from '@react-pdf/pdfkit';
+import { PDFFont } from '@nutshelllabs/pdfkit';
 import * as fontkit from 'fontkit';
 import { Font } from './types';
 

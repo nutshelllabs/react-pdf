@@ -1,5 +1,5 @@
-import { castArray } from '@react-pdf/fns';
-import * as P from '@react-pdf/primitives';
+import { castArray } from '@nutshelllabs/fns';
+import * as P from '@nutshelllabs/primitives';
 import React from 'react';
 
 import { Node } from '../types';

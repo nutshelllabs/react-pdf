@@ -1,5 +1,5 @@
 {
-  "name": "@react-pdf/types",
+  "name": "@nutshelllabs/types",
   "version": "2.9.2",
   "license": "MIT",
   "description": "React-pdf TypeScript definitions",
@@ -12,8 +12,8 @@
     "directory": "packages/types"
   },
   "dependencies": {
-    "@react-pdf/font": "^4.0.4",
-    "@react-pdf/primitives": "^4.1.1",
-    "@react-pdf/stylesheet": "^6.1.2"
+    "@nutshelllabs/font": "^4.0.4",
+    "@nutshelllabs/primitives": "^4.1.1",
+    "@nutshelllabs/stylesheet": "^6.1.2"
   }
 }

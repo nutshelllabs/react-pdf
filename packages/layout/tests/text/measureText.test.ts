@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
-import * as P from '@react-pdf/primitives';
-import FontStore from '@react-pdf/font';
+import * as P from '@nutshelllabs/primitives';
+import FontStore from '@nutshelllabs/font';
 import { SafeTextNode } from '../../src';
 import measureText from '../../src/text/measureText';
 

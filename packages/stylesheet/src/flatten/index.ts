@@ -1,4 +1,4 @@
-import { compose, castArray } from '@react-pdf/fns';
+import { compose, castArray } from '@nutshelllabs/fns';
 import { Style } from '../types';
 
 type StyleInput = Style | StyleInput[] | null | undefined;

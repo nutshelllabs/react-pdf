@@ -1,5 +1,5 @@
-import * as P from '@react-pdf/primitives';
-import { SafeNode } from '@react-pdf/layout';
+import * as P from '@nutshelllabs/primitives';
+import { SafeNode } from '@nutshelllabs/layout';
 
 import renderSvg from './renderSvg';
 import renderText from './renderText';

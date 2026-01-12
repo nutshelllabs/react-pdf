@@ -1,5 +1,5 @@
 import bidiFactory from 'bidi-js';
-import { repeat } from '@react-pdf/fns';
+import { repeat } from '@nutshelllabs/fns';
 import { AttributedString, Run } from '../types';
 
 const bidi = bidiFactory();

@@ -1,4 +1,4 @@
-import { SafeCheckboxNode } from '@react-pdf/layout';
+import { SafeCheckboxNode } from '@nutshelllabs/layout';
 import { Context, RenderOptions } from '../types';
 import { parseCheckboxOptions } from '../utils/parseFormOptions';
 

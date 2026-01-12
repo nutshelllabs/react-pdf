@@ -1,4 +1,4 @@
-import { compose } from '@react-pdf/fns';
+import { compose } from '@nutshelllabs/fns';
 
 import flattenStyles from './flatten';
 import resolveMediaQueries from './mediaQueries';

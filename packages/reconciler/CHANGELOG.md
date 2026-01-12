@@ -1,4 +1,4 @@
-# @react-pdf/reconciler
+# @nutshelllabs/reconciler
 
 ## 2.0.0
 

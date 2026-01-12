@@ -1,4 +1,4 @@
-import resolveImage from '@react-pdf/image';
+import resolveImage from '@nutshelllabs/image';
 
 import getSource from './getSource';
 import resolveSource from './resolveSource';

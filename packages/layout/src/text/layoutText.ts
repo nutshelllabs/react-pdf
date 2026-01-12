@@ -6,8 +6,8 @@ import layoutEngine, {
   wordHyphenation,
   textDecoration,
   fontSubstitution,
-} from '@react-pdf/textkit';
-import FontStore from '@react-pdf/font';
+} from '@nutshelllabs/textkit';
+import FontStore from '@nutshelllabs/font';
 
 import getAttributedString from './getAttributedString';
 import { SafeTextNode } from '../types';

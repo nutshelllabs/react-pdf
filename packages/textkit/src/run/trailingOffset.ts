@@ -1,4 +1,4 @@
-import { reverse } from '@react-pdf/fns';
+import { reverse } from '@nutshelllabs/fns';
 import isWhiteSpace from '../glyph/isWhiteSpace';
 import { Run } from '../types';
 

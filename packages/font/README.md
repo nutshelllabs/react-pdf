@@ -2,20 +2,20 @@
   <img src="https://user-images.githubusercontent.com/5600341/27505816-c8bc37aa-587f-11e7-9a86-08a2d081a8b9.png" height="280px">
 </p>
 
-# @react-pdf/font
+# @nutshelllabs/font
 
 Font registration, loading, and resolution library for react-pdf. Handles TTF, WOFF, and WOFF2 fonts from various sources including local files, remote URLs, and base64 data URIs. Includes built-in support for PDF standard fonts.
 
 ## Installation
 
 ```bash
-yarn add @react-pdf/font
+yarn add @nutshelllabs/font
 ```
 
 ## Usage
 
 ```js
-import FontStore from '@react-pdf/font';
+import FontStore from '@nutshelllabs/font';
 
 const fontStore = new FontStore();
 

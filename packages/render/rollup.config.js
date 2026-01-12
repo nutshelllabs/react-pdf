@@ -9,7 +9,7 @@ const config = [
   {
     input: 'src/index.ts',
     output: { format: 'es', file: 'lib/index.js' },
-    external: Object.keys(pkg.dependencies).concat(/@react-pdf/),
+    external: Object.keys(pkg.dependencies).concat(/@nutshelllabs/),
     plugins: [json(), typescript()],
   },
   {
