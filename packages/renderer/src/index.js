@@ -19,7 +19,7 @@ let renderer;
 // We only want to trigger an update when PDF content changes
 const events = {};
 
-const pdf = (initialValue) => {
+const pdf = (initialValue, cache) => {
   const onChange = () => {
     const listeners = events.change?.slice() || [];
     for (let i = 0; i < listeners.length; i += 1) listeners[i]();
@@ -35,7 +35,7 @@ const pdf = (initialValue) => {
 
   if (initialValue) updateContainer(initialValue);
 
-  const render = async (compress = true) => {
+  const render = async (compress = false) => {
     const props = container.document.props || {};
     const {
       pdfVersion,
@@ -78,7 +78,7 @@ const pdf = (initialValue) => {
       ctx._root.data.PageMode = upperFirst(pageMode);
     }
 
-    const layout = await layoutDocument(container.document, fontStore);
+    const layout = await layoutDocument(container.document, fontStore, cache || {});
     const fileStream = renderPDF(ctx, layout);
     return { layout, fileStream };
   };
@@ -114,8 +114,8 @@ const pdf = (initialValue) => {
   };
 
   // TODO: rename this method to `toStream` in next major release, because it return stream not a buffer
-  const toBuffer = async () => {
-    const { layout: _INTERNAL__LAYOUT__DATA_, fileStream } = await render();
+  const toBuffer = async (compress = false) => {
+    const { layout: _INTERNAL__LAYOUT__DATA_, fileStream } = await render(compress);
     callOnRender({ _INTERNAL__LAYOUT__DATA_ });
 
     return fileStream;

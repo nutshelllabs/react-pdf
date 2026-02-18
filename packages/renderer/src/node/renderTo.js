@@ -5,11 +5,13 @@ import { pdf } from '../index';
 
 /**
  * @param {React.ReactElement} element
+ * @param {Record<string, boolean>} [cache]
+ * @param {boolean} [compress=false]
  * @returns {Promise<NodeJS.ReadableStream>}
  */
-export const renderToStream = async (element) => {
-  const instance = pdf(element);
-  const stream = await instance.toBuffer();
+export const renderToStream = async (element, cache, compress = false) => {
+  const instance = pdf(element, cache);
+  const stream = await instance.toBuffer(compress);
   return stream;
 };
 
@@ -35,10 +37,12 @@ export const renderToFile = async (element, filePath, callback) => {
 
 /**
  * @param {React.ReactElement} element
+ * @param {Record<string, boolean>} [cache]
+ * @param {boolean} [compress=false]
  * @returns {Promise<Buffer>}
  */
-export const renderToBuffer = (element) =>
-  renderToStream(element).then(
+export const renderToBuffer = (element, cache, compress = false) =>
+  renderToStream(element, cache, compress).then(
     (stream) =>
       new Promise((resolve, reject) => {
         const chunks = [];
