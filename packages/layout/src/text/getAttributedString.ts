@@ -2,7 +2,7 @@ import * as P from '@nutshelllabs/primitives';
 import { Fragment, fromFragments } from '@nutshelllabs/textkit';
 import FontStore from '@nutshelllabs/font';
 
-import { embedEmojis } from './emoji';
+// import { embedEmojis } from './emoji';
 import ignoreChars from './ignoreChars';
 import transformText from './transformText';
 import {
@@ -13,7 +13,7 @@ import {
   SafeTspanNode,
 } from '../types';
 
-const PREPROCESSORS = [ignoreChars, embedEmojis];
+const PREPROCESSORS = [ignoreChars];
 
 const isImage = (node: SafeNode): node is SafeImageNode =>
   node.type === P.Image;
