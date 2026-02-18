@@ -198,10 +198,11 @@ const getCacheKey = (src: ImageSrc): string | null => {
   return src.uri;
 };
 
-const resolveImage = (src: ImageSrc, { cache = true } = {}) => {
+const resolveImage = (src: ImageSrc, { cache = true, cacheId }: { cache?: boolean; cacheId?: string } = {}) => {
   let image: Promise<Image | null>;
 
-  const cacheKey = getCacheKey(src);
+  // Use cacheId if provided, otherwise use default cache key
+  const cacheKey = cacheId || getCacheKey(src);
 
   if (isBlob(src)) {
     image = resolveBlobImage(src);

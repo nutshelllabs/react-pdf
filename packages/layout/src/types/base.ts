@@ -84,6 +84,10 @@ export type NodeProps = {
    */
   debug?: boolean;
   bookmark?: Bookmark;
+  /**
+   * Cache identifier for asset resolution deduplication.
+   */
+  cacheId?: string;
 };
 
 export type FillRule = 'nonzero' | 'evenodd';

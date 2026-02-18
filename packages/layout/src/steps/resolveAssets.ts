@@ -9,6 +9,21 @@ import { SafeImageNode, SafeNode } from '../types';
 const isImage = (node: SafeNode): node is SafeImageNode =>
   node.type === P.Image;
 
+const traverseImageAssets = (node: SafeNode, cb: (n: SafeImageNode) => void) => {
+  const nodesToExplore = node.children?.slice(0) || [];
+  while (nodesToExplore.length > 0) {
+    const n = nodesToExplore.shift();
+    if (n && n.type === P.Image) {
+      cb(n as SafeImageNode);
+    }
+    if (n && n.children) {
+      n.children.forEach((childNode) => {
+        nodesToExplore.push(childNode);
+      });
+    }
+  }
+};
+
 /**
  * Get all asset promises that need to be resolved
  *
@@ -25,7 +40,9 @@ const fetchAssets = (fontStore: FontStore, node: SafeNode) => {
     const n = listToExplore.shift();
 
     if (isImage(n)) {
-      promises.push(fetchImage(n));
+      if (!n.image) {
+        promises.push(fetchImage(n));
+      }
     }
 
     if (fontStore && n.style?.fontFamily) {
@@ -66,11 +83,40 @@ const fetchAssets = (fontStore: FontStore, node: SafeNode) => {
  *
  * @param node root node
  * @param fontStore font store
+ * @param cache cache for skipping already-processed documents
  * @returns Root node
  */
-const resolveAssets = async (node: SafeNode, fontStore: FontStore) => {
+const resolveAssets = async (
+  node: SafeNode,
+  fontStore: FontStore,
+  cache: Record<string, boolean> = {},
+) => {
+  // Skip if already cached by cacheId
+  const cacheId = node.props?.cacheId;
+  if (cacheId && cacheId in cache) {
+    return node;
+  }
+
+  // Pre-fetch images that don't have data yet
+  const imagePromises: Promise<void>[] = [];
+  traverseImageAssets(node, (n) => {
+    if (!n.image) {
+      imagePromises.push(fetchImage(n));
+    }
+  });
+
+  if (imagePromises.length > 0) {
+    await Promise.all(imagePromises);
+  }
+
   const promises = fetchAssets(fontStore, node);
   await Promise.all(promises);
+
+  // Mark as cached
+  if (cacheId) {
+    cache[cacheId] = true;
+  }
+
   return node;
 };
 

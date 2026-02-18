@@ -45,6 +45,7 @@ export type SourceObject =
 
 interface BaseImageProps extends NodeProps {
   cache?: boolean;
+  cacheId?: string;
   x?: number;
   y?: number;
 }

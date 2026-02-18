@@ -26,7 +26,8 @@ const fetchImage = async (node: SafeImageNode) => {
       throw new Error(`Image's "src" or "source" prop returned ${source}`);
     }
 
-    node.image = await resolveImage(source, { cache });
+    const nodeCacheId = node.props.cacheId;
+    node.image = await resolveImage(source, { cache, cacheId: nodeCacheId });
 
     if (Buffer.isBuffer(source) || source instanceof Blob) return;
 
