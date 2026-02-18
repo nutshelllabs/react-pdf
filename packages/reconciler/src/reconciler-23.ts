@@ -17,7 +17,7 @@ const createRenderer: ReconcilerFactory = ({
   removeChildFromContainer,
   resetAfterCommit,
 }) => {
-  return Reconciler({
+  const reconciler = Reconciler({
     appendChild,
     appendChildToContainer,
     appendInitialChild: appendChild,
@@ -40,6 +40,31 @@ const createRenderer: ReconcilerFactory = ({
     prepareUpdate: (element, type, oldProps, newProps) =>
       !propsEqual(oldProps, newProps),
   });
+
+  const createContainer = (container: unknown) => {
+    return reconciler.createContainer(container, false, false);
+  };
+
+  const updateContainer = (
+    doc: unknown,
+    mountNode: unknown,
+    parentComponent: unknown,
+    callback?: () => void,
+  ) => {
+    // Force synchronous update for React 18
+    if (reconciler.flushSync) {
+      reconciler.flushSync(() => {
+        reconciler.updateContainer(doc, mountNode, parentComponent, callback);
+      });
+    } else {
+      reconciler.updateContainer(doc, mountNode, parentComponent, callback);
+    }
+  };
+
+  return {
+    createContainer,
+    updateContainer,
+  };
 };
 
 export default createRenderer;
