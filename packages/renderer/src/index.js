@@ -78,7 +78,11 @@ const pdf = (initialValue, cache) => {
       ctx._root.data.PageMode = upperFirst(pageMode);
     }
 
-    const layout = await layoutDocument(container.document, fontStore, cache || {});
+    const layout = await layoutDocument(
+      container.document,
+      fontStore,
+      cache || {},
+    );
     const fileStream = renderPDF(ctx, layout);
     return { layout, fileStream };
   };
@@ -115,7 +119,8 @@ const pdf = (initialValue, cache) => {
 
   // TODO: rename this method to `toStream` in next major release, because it return stream not a buffer
   const toBuffer = async (compress = false) => {
-    const { layout: _INTERNAL__LAYOUT__DATA_, fileStream } = await render(compress);
+    const { layout: _INTERNAL__LAYOUT__DATA_, fileStream } =
+      await render(compress);
     callOnRender({ _INTERNAL__LAYOUT__DATA_ });
 
     return fileStream;

@@ -198,7 +198,10 @@ const getCacheKey = (src: ImageSrc): string | null => {
   return src.uri;
 };
 
-const resolveImage = (src: ImageSrc, { cache = true, cacheId }: { cache?: boolean; cacheId?: string } = {}) => {
+const resolveImage = (
+  src: ImageSrc,
+  { cache = true, cacheId }: { cache?: boolean; cacheId?: string } = {},
+) => {
   let image: Promise<Image | null>;
 
   // Use cacheId if provided, otherwise use default cache key

@@ -9,7 +9,10 @@ import { SafeImageNode, SafeNode } from '../types';
 const isImage = (node: SafeNode): node is SafeImageNode =>
   node.type === P.Image;
 
-const traverseImageAssets = (node: SafeNode, cb: (n: SafeImageNode) => void) => {
+const traverseImageAssets = (
+  node: SafeNode,
+  cb: (n: SafeImageNode) => void,
+) => {
   const nodesToExplore = node.children?.slice(0) || [];
   while (nodesToExplore.length > 0) {
     const n = nodesToExplore.shift();
