@@ -44,6 +44,7 @@ declare namespace ReactPDF {
     pageMode?: PageMode;
     pageLayout?: PageLayout;
     onRender?: (props: OnRenderProps) => any;
+    cacheId?: string;
   }
 
   /**
@@ -665,6 +666,8 @@ declare namespace ReactPDF {
 
   export const renderToStream: (
     document: React.ReactElement<DocumentProps>,
+    cache?: Record<string, unknown> | Map<string, unknown>,
+    compress?: boolean,
   ) => Promise<NodeJS.ReadableStream>;
 
   /**
@@ -688,5 +691,7 @@ declare namespace ReactPDF {
    */
   export const renderToBuffer: (
     document: React.ReactElement<ReactPDF.DocumentProps>,
+    cache?: Record<string, unknown> | Map<string, unknown>,
+    compress?: boolean,
   ) => Promise<Buffer>;
 }
