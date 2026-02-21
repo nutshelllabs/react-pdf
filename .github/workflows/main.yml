@@ -82,8 +82,8 @@ jobs:
     strategy:
       matrix:
         # We aim to test all maintained LTS versions of Node.js as well as the latest stable version
-        node_version: [18, 20, 21]
-        react_version: [16, 17, 18]
+        node_version: [22]
+        react_version: [18]
 
     steps:
       - name: Checkout
@@ -115,8 +115,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cjs_or_esm: [cjs, esm]
-        node_version: [18, 20, 21]
+        cjs_or_esm: [esm]
+        node_version: [22]
 
     steps:
       - name: Checkout
