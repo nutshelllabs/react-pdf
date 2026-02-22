@@ -104,6 +104,9 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
+      - name: Install canvas native dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev librsvg2-dev libpixman-1-dev
+
       - name: Install dependencies and build
         run: yarn --frozen-lockfile
 
@@ -136,6 +139,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node_version }}
+
+      - name: Install canvas native dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev librsvg2-dev libpixman-1-dev
 
       - name: Install dependencies and build
         run: yarn --frozen-lockfile
