@@ -1,5 +1,14 @@
 # @nutshelllabs/textkit
 
+## 6.1.2
+
+### Patch Changes
+
+- [#40](https://github.com/nutshelllabs/react-pdf/pull/40) [`b52a9f7a`](https://github.com/nutshelllabs/react-pdf/commit/b52a9f7a544d110c5f9ffcae9360e6bdf855145c) Thanks [@dannythai](https://github.com/dannythai)! - chore: update repository URLs to nutshelllabs fork
+
+- Updated dependencies [[`b52a9f7a`](https://github.com/nutshelllabs/react-pdf/commit/b52a9f7a544d110c5f9ffcae9360e6bdf855145c)]:
+  - @nutshelllabs/fns@3.1.4
+
 ## 6.1.1
 
 ### Patch Changes

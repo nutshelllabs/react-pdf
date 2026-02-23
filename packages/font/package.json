@@ -1,6 +1,6 @@
 {
   "name": "@nutshelllabs/font",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "license": "MIT",
   "description": "Register font and emoji source for react-pdf document",
   "author": "Diego Muracciole <diegomuracciole@gmail.com>",
@@ -23,8 +23,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nutshelllabs/pdfkit": "^4.1.0",
-    "@nutshelllabs/types": "^2.9.3",
+    "@nutshelllabs/pdfkit": "^4.1.1",
+    "@nutshelllabs/types": "^2.9.4",
     "fontkit": "^2.0.2",
     "is-url": "^1.2.4"
   },

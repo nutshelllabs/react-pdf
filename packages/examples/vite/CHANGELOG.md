@@ -1,5 +1,12 @@
 # @nutshelllabs/examples
 
+## 3.3.22
+
+### Patch Changes
+
+- Updated dependencies [[`b52a9f7a`](https://github.com/nutshelllabs/react-pdf/commit/b52a9f7a544d110c5f9ffcae9360e6bdf855145c)]:
+  - @nutshelllabs/renderer@4.3.4
+
 ## 3.3.21
 
 ### Patch Changes

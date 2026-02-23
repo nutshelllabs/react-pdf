@@ -1,5 +1,12 @@
 # @nutshelllabs/e2e-node-cjs
 
+## 2.0.26
+
+### Patch Changes
+
+- Updated dependencies [[`b52a9f7a`](https://github.com/nutshelllabs/react-pdf/commit/b52a9f7a544d110c5f9ffcae9360e6bdf855145c)]:
+  - @nutshelllabs/renderer@4.3.4
+
 ## 2.0.25
 
 ### Patch Changes
