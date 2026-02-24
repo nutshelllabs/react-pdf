@@ -1,5 +1,16 @@
 # @nutshelllabs/types
 
+## 2.9.4
+
+### Patch Changes
+
+- [#40](https://github.com/nutshelllabs/react-pdf/pull/40) [`b52a9f7a`](https://github.com/nutshelllabs/react-pdf/commit/b52a9f7a544d110c5f9ffcae9360e6bdf855145c) Thanks [@dannythai](https://github.com/dannythai)! - chore: update repository URLs to nutshelllabs fork
+
+- Updated dependencies [[`b52a9f7a`](https://github.com/nutshelllabs/react-pdf/commit/b52a9f7a544d110c5f9ffcae9360e6bdf855145c)]:
+  - @nutshelllabs/font@4.0.6
+  - @nutshelllabs/primitives@4.1.2
+  - @nutshelllabs/stylesheet@6.1.4
+
 ## 2.9.3
 
 ### Patch Changes

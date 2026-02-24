@@ -1,6 +1,6 @@
 {
   "name": "@nutshelllabs/image",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "license": "MIT",
   "description": "Parses the images in png or jpeg format for react-pdf document",
   "author": "Diego Muracciole <diegomuracciole@gmail.com>",
@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nutshelllabs/png-js": "^3.0.0",
+    "@nutshelllabs/png-js": "^3.0.1",
     "jay-peg": "^1.1.1"
   },
   "files": [
